@@ -13,7 +13,7 @@ services:
             - ./php/apache2/sites-enabled:/etc/apache2/sites-enabled:cached
             - ./php/apache2/logs:/var/log/apache2:delegated
         ports:
-            - 8080:80
+            - 8082:80
 
     mysql:
         container_name: mysql
@@ -25,7 +25,7 @@ services:
             MYSQL_USER: mysql
             MYSQL_PASSWORD: mysql
         ports:
-            - "3306:3306"
+            - "5306:3306"
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
