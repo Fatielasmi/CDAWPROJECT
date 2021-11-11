@@ -1582,4 +1582,14 @@ h3.head {
     width: calc(100% - 17rem);
   }
 }
-}
+.modal .modal-header {
+	background-color: #512DA8;
+	color: floralwhite; }
+	.modal .modal-header button {
+	  color: floralwhite; }
+  
+  .modal .modal-body {
+	background-color: #D1C4E9; }
+  
+  .modal .modal-footer {
+	background: #9575CD; }

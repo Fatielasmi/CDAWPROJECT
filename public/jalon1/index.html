@@ -37,8 +37,15 @@
                 <div class="w3l_sign_in_register">
                     <ul>
                         <li><a href="#" data-toggle="modal" data-target="#myModal">Login</a></li>
+
                     </ul>
+                    <div id="register-link" class="text-right " data-toggle="modal" data-target="#loginModal"
+                        style="margin-right: 22px">
+                        <a href="#" class="text-info">Register here</a>
+                    </div>
+
                 </div>
+
                 <div class="clearfix"> </div>
             </div>
 
@@ -115,11 +122,10 @@
             </div>
             <!-- End vertical navbar -->
             <!-- Toggle button -->
-            <div class="page-content p-5" id="content">
+            <div class="page-content p-2" id="content">
                 <button id="sidebarCollapse" type="button"
                     class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i
-                        class="fa fa-bars mr-2"></i><small
-                        class="text-uppercase font-weight-bold">Toggle</small></button>
+                        class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Menu</small></button>
             </div>
 
             <!--Fin sidebar menu-->
@@ -161,6 +167,41 @@
             </div>
         </div>
 
+
+
+        <!--subscribe form -->
+        <div id="loginModal" class="modal video-modal fade" role="dialog" tabindex="-1" aria-labelledby="myModal">
+            <div class="modal-dialog modal-lg" role="document">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Sign Up </h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <section>
+                        <div class="modal-body">
+                            <div class="w3_login_module">
+                                <div class="module form-module">
+                                    <div>
+                                        <h3 style="padding: 15px;">Create your account</h3>
+                                        <form action="#" method="post">
+                                            <input type="text" name="Username" placeholder="Username" required="">
+                                            <input type="email" name="Email" placeholder="Email Address" required="
+                            ">
+                                            <input type="password" name="Password" placeholder="Password" required="">
+                                            <input type="submit" value="Register">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -180,6 +221,19 @@
                 });
             });
         </script>
+        <script>
+
+            $(document).ready(function () {
+                $("#register-link").click(function () {
+                    $("#loginModal").modal('show');
+                });
+
+
+            });
+
+        </script>
+
+
 
 </body>
 
