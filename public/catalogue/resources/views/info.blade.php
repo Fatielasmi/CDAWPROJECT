@@ -35,7 +35,10 @@
                            
                             
                                 <div class="col-8">
-                                    <div style="margin-bottom: 7px ;"> <?php echo $films[0]->category_id; ?></div>
+                                    <div style="margin-bottom: 7px ;"> <?php 
+                                    $info=$films[0]->category_id; ?>
+                                    {{$cat=App\Models\category::where('id',$info)->first()->name}}
+                                    </div>
                                     <div style="margin-bottom: 7px ;"><?php echo $films[0]->director; ?> </div>
                                    
                                 </div>

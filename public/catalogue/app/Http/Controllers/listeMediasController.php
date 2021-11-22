@@ -74,6 +74,7 @@ class listeMediasController extends Controller
     public function viewFilm($id){
 
         $films = film::where('id', $id)->get();
+        
         return view('info',['films'=>$films]);
         
     }
