@@ -33,3 +33,6 @@ Route::post('/edit/{id}','App\Http\Controllers\listeMEdiasController@EditFilm');
 Route::delete('/film/{id}','App\Http\Controllers\listeMEdiasController@destroy');
 
 Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@viewFilm');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
