@@ -78,5 +78,8 @@ class listeMediasController extends Controller
         return view('info',['films'=>$films]);
         
     }
+    public function reg(){
+        return view('test');
+    }
  
 }

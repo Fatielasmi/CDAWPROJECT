@@ -77,29 +77,40 @@
 	 
  }
  .account_desc ul{
-	margin-top: 20px;
+	margin-top: 23px;
 }
  .account_desc li{
 	 display:block;
 	 
  }
- .account_desc li:first-child{
+ .account_desc ul li:first-child{
 
-		color: #fff;
+		
 		  display: inline-block;
-		  text-transform: uppercase;
+		 border: none;
 		  text-decoration: none;
-		  background: #FF8D1B;
+		  background: black;
+          border-radius: 25px;
+
 		  text-align: center;
-		  padding: 6px 10px;
-		  font-weight: bold;
+		  padding: 7px 16px 8px 16px;
+		 
+		  font-size: 16px;
 	  
  }
+  .account_desc ul li a:first-child{
+color:#FFF;
+  }
+   .account_desc ul li:first-child:hover{
+  background:#FF8D1B;
+  }
+
+.texte a{
+   padding-left: 18px; 
+  }
+  
  .account_desc li a{
 	 font-size:1em;
-	 color: #000;
-	 padding:0 10px;
-	 font-family: 'ambleregular';
 	  -webkit-transition: all 0.3s ease-out;
 	 -moz-transition: all 0.3s ease-out;
 	 -ms-transition: all 0.3s ease-out;
@@ -240,27 +251,44 @@
  .categories{
 	 border:1px solid #EEE;
  }
- .categories h3{
+ .categories h2{
 	 font-size:1.2em;
 	 color:#FFF;
 	 padding:10px;
 	 background:#FC7D01;
 	 text-transform:uppercase;
 	 font-family: 'ambleregular';	
+	 padding-top: 16px;
+	 padding-bottom: 16px;
+ }
+ .categories p{
+ 	padding-top: 8px;
+ 	 padding-bottom: 8px;
+                                
+    padding-left: 22px; background: #C0C0C0;color: #000;
+     border-bottom: 1px solid #F1F1F1;
+	 text-transform:uppercase;	
+  font-family: 'ambleregular';
+  padding-top: 18px;
+	 padding-bottom: 18px;
  }
  .categories li{
-	 background: url(../images/strip-bg.gif) repeat-x #F6F6F6;
+background-color: #C0C0C0;
+	 
  }
  .categories li a{
 	 display:block;
 	 font-size:0.85em;
 	 padding:9px 15px;
-	 color: #9C9C9C;
+	 color: #000;
 	 font-family: 'ambleregular';
 	 margin:0 20px;
 	 background:url(../images/drop_arrow.png) no-repeat 0;
 	 border-bottom: 1px solid #F1F1F1;
-	 text-transform:uppercase;	
+	 text-transform:uppercase;
+	 padding-top: 17px;
+	 padding-bottom: 17px;
+
  }
  .categories li:last-child a{
 	 border:none;
@@ -316,6 +344,10 @@
  }
  .images_1_of_5  img {
 	 max-width: 100%;
+	 height: 250px;
+ }
+ .images_1_of_5  h2 {
+ 	margin-top: 5px;
  }
  .images_1_of_5  h2  a{
 	 color:#888;
@@ -334,7 +366,7 @@
 	 color:#CC3636;
  }
  .price-details{
-	 margin-top:10px;
+	 margin-top:5px;
  }
  .price-number{
 	 float: left;
@@ -345,7 +377,7 @@
 	 color:#383838;
  }
  .add-cart{
-	 float:right;
+	
 	 display: inline-block;
  }
  .add-cart h4 a{
@@ -1028,7 +1060,7 @@
 .w3_search input[type="text"]{
   outline: none;
     border: none;
-    background:#EFEFEF;
+    background:#C0C0C0;
     padding: 10px;
     text-align: center;
     font-size: 14px;

@@ -1,5 +1,4 @@
- /* reset */
- html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
  article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
  ol,ul{list-style:none;margin:0;padding:0;}
  blockquote,q{quotes:none;}
@@ -21,7 +20,7 @@
  nav.vertical ul li{	display:block;}/* vertical menu */
  nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
  img{max-width:100%;}
- /*end reset*/
+ /end reset/
  @font-face {
 	 font-family: 'ambleregular';
 	 src:url(../font/Amble-Regular-webfont.ttf) format('truetype');
@@ -77,7 +76,7 @@
 	 
  }
  .account_desc ul{
-	margin-top: 20px;
+	margin-top: 3px;
 }
  .account_desc li{
 	 display:block;
@@ -146,7 +145,7 @@
 	 width: 25px;
 	 height:32px;
  }
- /**** Cart ****/
+ /** Cart **/
  .cart{
 	  float:right;
 	  position: relative;
@@ -229,7 +228,7 @@
 	 opacity: 1;
 	 pointer-events: auto;
  }
-	/**** End Cart ****/
+	/** End Cart **/
  .header_slide{
 	 margin-top:10px;
  }
@@ -239,7 +238,9 @@
  }
  .categories{
 	 border:1px solid #EEE;
+	 padding-top: 6px;
  }
+
  .categories h3{
 	 font-size:1.2em;
 	 color:#FFF;
@@ -248,32 +249,48 @@
 	 text-transform:uppercase;
 	 font-family: 'ambleregular';	
  }
- .categories li{
-	 background: url(../images/strip-bg.gif) repeat-x #F6F6F6;
+
+	 .categories li{
+background-color: #C0C0C0;
+	 
+ 
  }
+  .categories p{
+ 	padding-top: 8px;
+ 	 padding-bottom: 8px;
+                                
+    padding-left: 22px; background: #C0C0C0;color: #000;
+  
+	 text-transform:uppercase;	
+  font-family: 'ambleregular';
+
+ }
+ .cat{
+ 	border-bottom: 1px solid #F1F1F1;
+ }
+ .special{
+border-bottom: 1px solid #FC7D01;
+ }
+
  .categories li a{
 	 display:block;
 	 font-size:0.85em;
 	 padding:9px 15px;
-	 color: #9C9C9C;
+	 color: #000;
 	 font-family: 'ambleregular';
 	 margin:0 20px;
 	 background:url(../images/drop_arrow.png) no-repeat 0;
 	 border-bottom: 1px solid #F1F1F1;
 	 text-transform:uppercase;	
  }
- .categories li:last-child a{
-	 border:none;
- }
- .categories li a:hover{
-	 color:#FC7D01;
- }
+
+
  .header_bottom_right{
 	 float:left;
 	 width:74%;
 	 padding-left:1%;
  }
- /***** Content *****/
+ /** Content **/
  .content {
 	 padding: 20px 0;
 	 background: #FFF;
@@ -295,7 +312,7 @@
 	 color:#FC7D01;
 	 text-transform: uppercase;
  }
- /**** Grid 1_0f_5 ****/
+ /** Grid 1_0f_5 **/
  .grid_1_of_5 {
 	 display: block;
 	 float: left;
@@ -345,8 +362,8 @@
 	 color:#383838;
  }
  .add-cart{
-	 float:right;
 	 display: inline-block;
+	 float:right;
  }
  .add-cart h4 a{
 	 font-size:0.85em;
@@ -366,7 +383,7 @@
 	   text-shadow: 0px 0px 1px #000;
 	   background:#292929;
  }
- /*** Footer ***/
+ /* Footer */
 
  /*  Preview  ============================================================================= */
  .back-links {
@@ -625,7 +642,7 @@
 	  text-shadow: 0px 0px 1px #000;
 	   background:#292929;
  }
- /**** End Preview Page ******/
+ /** End Preview Page **/
  /*  Contact Form  ============================================================================= */
  .section {
 	 clear: both;
@@ -736,7 +753,7 @@
  .map {
 	 margin-bottom: 15px;
  }
- /**** Responsive Layout ****/
+ /** Responsive Layout **/
  @media only screen and (max-width: 1366px) and (min-width: 1280px) {
 	 .wrap{
 		 width:90%;
@@ -1027,8 +1044,7 @@
 }
 .w3_search input[type="text"]{
   outline: none;
-    border: none;
-    background:#EFEFEF;
+    border: none;  background:#C0C0C0;
     padding: 10px;
     text-align: center;
     font-size: 14px;
@@ -1197,7 +1213,7 @@
   .modal-content{
 	z-index:9999;
   }
-/*vertical navbar*/
+/vertical navbar/
   .vertical-nav {
 	min-width: 17rem;
 	width: 17rem;
@@ -1393,14 +1409,13 @@
   .logo2{
 	  float: right;
   }
-  /*-- //footer --*/
+  /-- //footer --/
 
   @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
 
 
 
-
-
+  
 
 .navbar .nav_right ul li.nr_li{
 	margin-left: 25px;
@@ -1410,29 +1425,28 @@
 	position: relative;
 }
 
-.navbar .nav_right ul li.nr_li:hover {
-    color: #cefffc;
-}
 
 .navbar .nav_right ul li img{
-	width: 35px;
+	width: 50px;
 	vertical-align: middle;
 }
 
 .navbar .dd_menu {
     position: absolute;
-    right: -25px;
-    top: 47px;
+    right: 0px;
+    
     display: flex;
-    background: #fff;
-    border-radius: 15px;
+   
+	background-color: #C0C0C0;
     box-shadow: 0px 0px 3px rgba(0,0,0,0.25);
     display: none;
 	z-index:1000;
+	border-radius: 15px;
+	
 }
 
 .navbar .dd_menu .dd_left{
-	background: #74ded8;
+	background: #FF8D1B;
 	padding: 15px 20px;
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
@@ -1444,11 +1458,14 @@
 
 .navbar .dd_menu .dd_right{
 	padding: 15px 20px;
+	font-size: 0.85em;
+	
 }
 
 .navbar .dd_menu li{
 	margin-bottom: 10px;
 	color: #868686;
+	
 }
 
 .navbar .dd_menu:before{
