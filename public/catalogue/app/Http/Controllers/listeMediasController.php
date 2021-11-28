@@ -81,5 +81,8 @@ class listeMediasController extends Controller
     public function reg(){
         return view('test');
     }
+    public function viewprofil(){
+        return view('test');
+    }
  
 }

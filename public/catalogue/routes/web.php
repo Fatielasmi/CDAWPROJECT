@@ -20,10 +20,11 @@ use App\Http\Controllers\listeMediasController;
 
 
 //route : afficher le fichier HTML
-Route::get('/', 'App\Http\Controllers\listeMediasController@afficher');
+Route::get('/index', 'App\Http\Controllers\listeMediasController@afficher');
 Route::get('/getForm', 'App\Http\Controllers\listeMediasController@getForm');
 Route::get('/create', 'App\Http\Controllers\listeMediasController@create');
 Route::post('/create', 'App\Http\Controllers\listeMediasController@addFilm');
+Route::get('/profil', 'App\Http\Controllers\listeMediasController@Viewprofil');
 
 
 

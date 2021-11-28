@@ -5,23 +5,23 @@
     <title>Free Movies Store Website Template | Home :: w3layouts</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../public/css/index.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../public/css/slider.css" rel="stylesheet" type="text/css" media="all" />
     <!-- font-awesome icons -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../public/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- //font-awesome icons -->
     <!-- js -->
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../public/js/jquery-2.1.4.min.js"></script>
     <!-- //js -->
-    <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
-    <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+    <script type="text/javascript" src="../../public/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../public/js/move-top.js"></script>
+    <script type="text/javascript" src="../../public/js/easing.js"></script>
+    <script type="text/javascript" src="../../public/js/jquery.nivo.slider.js"></script>
     <script type="text/javascript">
         $(window).load(function () {
             $('#slider').nivoSlider();
@@ -36,7 +36,7 @@
                 <div class="nav_list">
                     <ul>
                         <div class="logo">
-                            <a href="/"><img src="images/logo.png" alt="" /></a>
+                            <a href="/"><img src="../../public/images/logo.png" alt="" /></a>
                         </div>
                     </ul>
 
@@ -66,7 +66,7 @@
         <div class="wrap">
 
             <div class="header_bottom">
-                <div class="header_bottom_left">
+            <div class="header_bottom_left">
                     <div class="categories">
                         <ul>
                             <h2>Menu</h2>
@@ -81,15 +81,7 @@
                             <li><a href="#">Music</a></li>
                             <li><a href="#">Kids</a></li>
                         </ul>
-                       <!-- <ul>
-                            <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0"
-                                style="padding-top: 8px; padding-bottom: 8px;"><strong><u>Special For You </u></strong>
-                            </p>
-                            <li><a href="#">PlayList</a></li>
-                            <li><a href="#">WatchList</a></li>
-                            <li><a href="#">Favorites</a></li>
-
-                        </ul>-->
+                      
                     </div>
                 </div>
                 <div class="header_bottom_right">
@@ -97,11 +89,11 @@
                     <div class="slider">
                         <div class="slider-wrapper theme-default">
                             <div id="slider" class="nivoSlider">
-                                <img src="images/1.jpg" data-thumb="images/1.jpg" alt="" />
-                                <img src="images/2.jpg" data-thumb="images/2.jpg" alt="" />
-                                <img src="images/3.jpg" data-thumb="images/3.jpg" alt="" />
-                                <img src="images/4.jpg" data-thumb="images/4.jpg" alt="" />
-                                <img src="images/5.jpg" data-thumb="images/5.jpg" alt="" />
+                                <img src="../../public/images/1.jpg" data-thumb="images/1.jpg" alt="" />
+                                <img src="../../public/images/2.jpg" data-thumb="images/2.jpg" alt="" />
+                                <img src="../../public/images/3.jpg" data-thumb="images/3.jpg" alt="" />
+                                <img src="../../public/images/4.jpg" data-thumb="images/4.jpg" alt="" />
+                                <img src="../../public/images/5.jpg" data-thumb="images/5.jpg" alt="" />
                             </div>
                         </div>
                     </div>
@@ -132,7 +124,7 @@
                 </div>
                 <div class="section group">
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/end-game.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/end-game.jpg" alt="" /></a>
                         <h2><a href="preview.html">End Game</a></h2>
                          <div class="price-details">
                            
@@ -141,7 +133,7 @@
                       
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Sorority_Wars.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Sorority_Wars.jpg" alt="" /></a>
                         <h2><a href="preview.html">Sorority Wars</a></h2>
                         <div class="price-details">
                             
@@ -150,7 +142,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/New-Moon-The-Score-cover-twilight.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/New-Moon-The-Score-cover-twilight.jpg" alt="" /></a>
                         <h2><a href="preview.html">Twilight New Moon</a></h2>
                         <div class="price-details">
                             
@@ -159,7 +151,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/avatar_movie.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/avatar_movie.jpg" alt="" /></a>
                         <h2><a href="preview.html">Avatar</a></h2>
                         <div class="price-details">
                            
@@ -167,7 +159,7 @@
                         </div>
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/black-swan.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/black-swan.jpg" alt="" /></a>
                         <h2><a href="preview.html">Black Swan</a></h2>
                         <div class="price-details">
                            
@@ -182,7 +174,7 @@
                 </div>
                 <div class="section group">
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/beauty_and_the_beast.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/beauty_and_the_beast.jpg" alt="" /></a>
                         <h2><a href="preview.html">Beauty and the beast</a></h2>
                         <div class="price-details">
                            
@@ -192,7 +184,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Eclipse.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Eclipse.jpg" alt="" /></a>
                         <h2><a href="preview.html">Eclipse</a></h2>
                         <div class="price-details">
                            
@@ -201,7 +193,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Coraline.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Coraline.jpg" alt="" /></a>
                         <h2><a href="preview.html">Coraline</a></h2>
                         <div class="price-details">
                            
@@ -210,7 +202,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Unstoppable.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Unstoppable.jpg" alt="" /></a>
                         <h2><a href="preview.html">Unstoppable</a></h2>
                         <div class="price-details">
                            
@@ -218,7 +210,7 @@
                         </div>
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Priest.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Priest.jpg" alt="" /></a>
                         <h2><a href="preview.html">Priest 3D</a></h2>
                         <div class="price-details">
                             
@@ -233,7 +225,7 @@
                 </div>
                 <div class="section group">
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/end-game.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/end-game.jpg" alt="" /></a>
                         <h2><a href="preview.html">End Game</a></h2>
                         <div class="price-details">
                             
@@ -241,7 +233,7 @@
                         </div>
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Sorority_Wars.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Sorority_Wars.jpg" alt="" /></a>
                         <h2><a href="preview.html">Sorority Wars</a></h2>
                         <div class="price-details">
                            
@@ -250,7 +242,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/New-Moon-The-Score-cover-twilight.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/New-Moon-The-Score-cover-twilight.jpg" alt="" /></a>
                         <h2><a href="preview.html">Twilight New Moon</a></h2>
                         <div class="price-details">
                             
@@ -259,7 +251,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/avatar_movie.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/avatar_movie.jpg" alt="" /></a>
                         <h2><a href="preview.html">Avatar</a></h2>
                         <div class="price-details">
                             
@@ -267,7 +259,7 @@
                         </div>
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/black-swan.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/black-swan.jpg" alt="" /></a>
                         <h2><a href="preview.html">Black Swan</a></h2>
                         <div class="price-details">
                             
@@ -282,7 +274,7 @@
                 </div>
                 <div class="section group">
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/beauty_and_the_beast.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/beauty_and_the_beast.jpg" alt="" /></a>
                         <h2><a href="preview.html">Beauty and the beast</a></h2>
                         <div class="price-details">
                            
@@ -291,7 +283,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Eclipse.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Eclipse.jpg" alt="" /></a>
                         <h2><a href="preview.html">Eclipse</a></h2>
                         <div class="price-details">
                            
@@ -300,7 +292,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Coraline.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Coraline.jpg" alt="" /></a>
                         <h2><a href="preview.html">Coraline</a></h2>
                         <div class="price-details">
                            
@@ -309,7 +301,7 @@
 
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Unstoppable.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Unstoppable.jpg" alt="" /></a>
                         <h2><a href="preview.html">Unstoppable</a></h2>
                         <div class="price-details">
                             
@@ -317,7 +309,7 @@
                         </div>
                     </div>
                     <div class="grid_1_of_5 images_1_of_5">
-                        <a href="preview.html"><img src="images/Priest.jpg" alt="" /></a>
+                        <a href="preview.html"><img src="../../public/images/Priest.jpg" alt="" /></a>
                         <h2><a href="preview.html">Priest 3D</a></h2>
                         <div class="price-details">
                            
@@ -357,7 +349,7 @@
                 </div>
                 <div class="col-sm-6 w3ls_footer_grid_right">
                     <div class="logo2">
-                        <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                        <a href="index.html"><img src="../../public/images/logo.png" alt="" /></a>
                     </div>
 
                 </div>

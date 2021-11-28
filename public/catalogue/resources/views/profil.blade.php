@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link href="css/profil.css" rel="stylesheet">
+    <link href="../../public/css/profil.css" rel="stylesheet">
 
 </head>
 
@@ -22,7 +22,7 @@
                 <div class="nav_list">
                     <ul>
                         <div class="logo">
-                            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                            <a href="index.html"><img src="../../public/images/logo.png" alt="" /></a>
                         </div>
 
                     </ul>
@@ -156,7 +156,7 @@
                     </div>
                     <div class="col-sm-6 w3ls_footer_grid_right">
                         <div class="logo2">
-                            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                            <a href="index.html"><img src="../../public/images/logo.png" alt="" /></a>
                         </div>
 
                     </div>
@@ -166,7 +166,7 @@
                     <p>&copy; 2016 One Movies. All rights reserved MStore Movies.
                     </p>
                 </div>
-                <div class="col-md-7 w3ls_footer_grid1_right" style="padding-bottom: 40px;">
+                <div class="col-md- w3ls_footer_grid1_right" style="padding-bottom: 40px;">
                     <ul>
                         <li>
                             <a href="genres.html">Movies</a>

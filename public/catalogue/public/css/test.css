@@ -233,3 +233,34 @@ body{
  
 /*footer*/
 
+.profile-pic-div{
+   
+    
+    
+    
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+
+
+#file{
+    display: none;
+}
+
+#uploadBtn{
+    height: 30px;
+    width: 80%;
+   
+   
+    left: 50%;
+  
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 10px;
+    cursor: pointer;
+   /* display: none; */
+}

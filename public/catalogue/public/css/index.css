@@ -377,8 +377,8 @@ background-color: #C0C0C0;
 	 color:#383838;
  }
  .add-cart{
-	
-	 display: inline-block;
+	 float:right;
+	 
  }
  .add-cart h4 a{
 	 font-size:0.85em;
