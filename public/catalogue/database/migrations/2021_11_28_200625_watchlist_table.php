@@ -14,8 +14,11 @@ class WatchlistTable extends Migration
     public function up()
     {
         Schema::create('watchlist', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedbiginteger('user_id');
+             $table->foreign('user_id')->references('id')->on('users');
+             $table->unsignedinteger('media_id');
+           $table->foreign('media_id')->references('id')->on('media');
+            $table->primary(['user_id','media_id']);
         });
     }
 

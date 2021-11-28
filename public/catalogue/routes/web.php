@@ -25,7 +25,8 @@ Route::get('/getForm', 'App\Http\Controllers\listeMediasController@getForm');
 Route::get('/create', 'App\Http\Controllers\listeMediasController@create');
 Route::post('/create', 'App\Http\Controllers\listeMediasController@addFilm');
 Route::get('/profil', 'App\Http\Controllers\listeMediasController@Viewprofil');
-
+Route::get('/reg', 'App\Http\Controllers\listeMediasController@register');
+Route::delete('/dashboard','App\Http\Controllers\listeMEdiasController@home');
 
 
 Route::get('/edit/{id}','App\Http\Controllers\listeMEdiasController@edit');

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ComporteTable extends Migration
+class PlaylistTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,14 @@ class ComporteTable extends Migration
      */
     public function up()
     {
-        Schema::create('comporte', function (Blueprint $table) {
+        Schema::create('playlist', function (Blueprint $table) {
+            
             $table->id();
+            $table->string('name')->default('PlayList');
+            $table->unsignedbiginteger('user_id');
+          $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
+            
         });
     }
 
@@ -26,6 +31,6 @@ class ComporteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comporte');
+        Schema::dropIfExists('playlist');
     }
 }

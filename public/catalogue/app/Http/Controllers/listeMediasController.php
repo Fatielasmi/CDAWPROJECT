@@ -78,11 +78,11 @@ class listeMediasController extends Controller
         return view('info',['films'=>$films]);
         
     }
-    public function reg(){
-        return view('test');
+    public function register(){
+        return view('regis');
     }
-    public function viewprofil(){
-        return view('test');
+    public function home(){
+        return view('home');
     }
  
 }

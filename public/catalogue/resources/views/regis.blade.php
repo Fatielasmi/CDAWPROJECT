@@ -11,17 +11,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link href="css/register.css" rel="stylesheet">
+    <link href="../../public/css/register.css" rel="stylesheet">
 </head>
 
-<body>
+<body style='background:#F5F5F5;'>
 
     <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light ">
+        <nav class="navbar navbar-expand-lg navbar-light " style='margin-bottom:0px'>
             <div class="container">
                 <!-- Navbar Brand -->
                 <a href="#" class="navbar-brand">
-                    <img src="images/logo.png" alt="logo" width="150">
+                    <img src="../../public/images/logo.png" alt="logo" width="150">
                 </a>
             </div>
         </nav>
@@ -29,106 +29,74 @@
 
 
     <div class="container">
-        <div class="row   align-items-center">
-            <!-- For Demo Purpose -->
-            <div class="mb-8" style="margin-bottom: 65px">
-                <img src="images/connex.jpg" alt="" class="ss">
-
-
-
-
-            </div>
+       
 
             <!-- Registeration Form -->
 
-            <div class="col-md-7 col-lg-6 ml-auto">
-                <h1 style="padding-bottom: 40px;">Create an Account</h1>
-                <form action="#">
-                    <div class="row">
+            <div class="col-md- col-lg- ">
 
-                        <!-- First Name -->
-                        <div class="input-group col-lg-12 mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                    <i class="fa fa-user text-muted"></i>
-                                </span>
-                            </div>
-                            <input id="firstName" type="text" name="firstname" placeholder=" Name"
-                                class="form-control bg-white border-left-0 border-md">
+<x-guest-layout>
+
+<x-jet-authentication-card>
+    <x-slot name="logo">
+    <h1 style='font-size: 40px;'><strong>Create an Account</strong></h1>
+    </x-slot>
+
+    <x-jet-validation-errors class="mb-4" />
+
+    <form method="POST" action="{{ route('register') }}">
+        @csrf
+
+        <div>
+            <x-jet-label for="name" value="{{ __('Name') }}" />
+            <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+        </div>
+
+        <div class="mt-4">
+            <x-jet-label for="email" value="{{ __('Email') }}" />
+            <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+        </div>
+
+        <div class="mt-4">
+            <x-jet-label for="password" value="{{ __('Password') }}" />
+            <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
+        </div>
+
+        <div class="mt-4">
+            <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
+            <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
+        </div>
+
+        @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
+            <div class="mt-4">
+                <x-jet-label for="terms">
+                    <div class="flex items-center">
+                        <x-jet-checkbox name="terms" id="terms"/>
+
+                        <div class="ml-2">
+                            {!! __('I agree to the :terms_of_service and :privacy_policy', [
+                                    'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Terms of Service').'</a>',
+                                    'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900">'.__('Privacy Policy').'</a>',
+                            ]) !!}
                         </div>
-
-                        <!-- Last Name -->
-                      
-                        <!-- Email Address -->
-                        <div class="input-group col-lg-12 mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                    <i class="fa fa-envelope text-muted"></i>
-                                </span>
-                            </div>
-                            <input id="email" type="email" name="email" placeholder="Email Address"
-                                class="form-control bg-white border-left-0 border-md">
-                        </div>
-
-
-
-                        <!-- Password -->
-                        <div class="input-group col-lg-6 mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                    <i class="fa fa-lock text-muted"></i>
-                                </span>
-                            </div>
-                            <input id="password" type="password" name="password" placeholder="Password"
-                                class="form-control bg-white border-left-0 border-md">
-                        </div>
-
-                        <!-- Password Confirmation -->
-                        <div class="input-group col-lg-6 mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-white px-4 border-md border-right-0">
-                                    <i class="fa fa-lock text-muted"></i>
-                                </span>
-                            </div>
-                            <input id="passwordConfirmation" type="text" name="passwordConfirmation"
-                                placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md">
-                        </div>
-
-                        <!-- Submit Button -->
-                        <div class="form-group col-lg-12 mx-auto mb-0">
-                            <a href="#" class="btn btn-warning btn-block py-2">
-                                <span class="font-weight-bold">Create your account</span>
-
-                            </a>
-                        </div>
-
-                        <!-- Divider Text -->
-                        <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
-                            <div class="border-bottom w-100 ml-5"></div>
-                            <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
-                            <div class="border-bottom w-100 mr-5"></div>
-                        </div>
-
-                        <!-- Social Login -->
-                        <div class="form-group col-lg-12 mx-auto">
-                            <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
-                                <i class="fa fa-facebook-f mr-2"></i>
-                                <span class="font-weight-bold">Continue with Facebook</span>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-block py-2 btn-google">
-                                <i class="fa fa-twitter mr-2"></i>
-                                <span class="font-weight-bold">Continue with Google</i></span>
-                            </a>
-                        </div>
-
-                        <!-- Already Registered -->
-                        <div class="text-center w-100">
-                            <p class="text-muted font-weight-bold">Already Registered? <a href="connex.html"
-                                    class="text-warning ml-2">Login</a></p>
-                        </div>
-
                     </div>
-                </form>
+                </x-jet-label>
+            </div>
+        @endif
+
+        <div class="flex items-center justify-end mt-4">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                {{ __('Already registered?') }}
+            </a>
+
+            <x-jet-button class="ml-4 ">
+                {{ __('Register') }}
+            </x-jet-button>
+        </div>
+    </form>
+</x-jet-authentication-card>
+</x-guest-layout>
+                 
             </div>
         </div>
     </div>
@@ -150,7 +118,7 @@
                     </div>
                     <div class="col-sm-6 w3ls_footer_grid_right">
                         <div class="logo2">
-                            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                            <a href="index.html"><img src="../../public/images/logo.png" alt="" /></a>
                         </div>
 
                     </div>

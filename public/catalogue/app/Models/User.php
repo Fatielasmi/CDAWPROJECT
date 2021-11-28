@@ -58,4 +58,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    public function media()
+{
+    return $this->belongsToMany('App\Models\media');
+}
 }
