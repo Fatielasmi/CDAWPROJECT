@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <div id="preview">
+        <input type="image" id="ig" style="height:100px"
+            src="https://upload.wikimedia.org/wikipedia/fr/a/a0/Avatar_Logo.png">
+    </div>
+    <input id="imgupload" type="file" style="display:none" onchange="handleFiles(this.files)">
+
+    <script>
+        document.querySelector("input[type='image']").addEventListener('click', (event) => {
+            document.querySelector("input[type='file']").click();
+        })
+        function handleFiles(files) {
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                let ig = document.getElementById('ig');
+
+                if (!file.type.startsWith('image/')) { continue }
+
+                ig.src = file.name;
+                //A COMPLETER ICI
+
+                const reader = new FileReader();
+                reader.onload = (function (aImg) {
+                    return function (e) {
+                        console.log(e.target.result); aImg.src = e.target.result;
+                    };
+                })
+                    (ig);
+                reader.readAsDataURL(file);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
