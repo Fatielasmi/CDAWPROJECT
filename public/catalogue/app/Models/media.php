@@ -15,6 +15,10 @@ class media extends Model
     
 public function users()
 {
-    return $this->belongsToMany('App\Models\media');
+    return $this->belongsToMany('App\Models\User');
+}
+public function playlist()
+{
+    return $this->belongsToMany('App\Models\playList');
 }
 }

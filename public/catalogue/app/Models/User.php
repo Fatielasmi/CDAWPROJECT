@@ -62,4 +62,8 @@ class User extends Authenticatable
 {
     return $this->belongsToMany('App\Models\media');
 }
+public function playlist()
+{
+    return $this->belongsToMany('App\Models\playList');
+}
 }

@@ -15,7 +15,7 @@ class MediaFactory extends Factory
     {
         return [
           
-            'category_id'=>rand(1,7),
+            'category_id'=>rand(1,6),
           
 
             

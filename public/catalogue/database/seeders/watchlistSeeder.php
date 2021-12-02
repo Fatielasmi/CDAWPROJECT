@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class watchListSeeder extends Seeder
+class watchlistSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -26,6 +26,6 @@ class watchListSeeder extends Seeder
     //     }
        
         //Etape 2
-        \App\Models\watchList::factory(10)->create();
+        \App\Models\watchList::factory(20)->create();
     }
 }

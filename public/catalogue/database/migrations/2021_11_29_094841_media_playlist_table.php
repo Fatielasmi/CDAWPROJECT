@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CommentairesTable extends Migration
+class MediaPlaylistTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CommentairesTable extends Migration
      */
     public function up()
     {
-        Schema::create('commentaires', function (Blueprint $table) {
-            $table->unsignedbiginteger('user_id');
-             $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('media_playlist', function (Blueprint $table) {
+            $table->unsignedbiginteger('playlist_id');
+             $table->foreign('playlist_id')->references('id')->on('playlist');
              $table->unsignedinteger('media_id');
            $table->foreign('media_id')->references('id')->on('media');
-            $table->primary(['user_id','media_id']);
-            $table->longText('text');
+            $table->primary(['playlist_id','media_id']);
         });
     }
 
@@ -30,6 +29,6 @@ class CommentairesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commentaires');
+        Schema::dropIfExists('media_playlist');
     }
 }

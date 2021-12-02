@@ -42,16 +42,13 @@
 
                 </div>
                 <div class="w3_search">
-                    <form action="#" method="post">
-                        <input type="text" name="Search" placeholder="Search" required="">
-                        <input type="submit" value="Go">
-                    </form>
+                    @include('partials.search')
                 </div>
                 <div class="account_desc">
                     <ul>
-                        <li ><a a href="/connex" data-toggle="modal" data-target="#singInPage"style=" padding:0 10px;">Login</a></li>
+                        <li ><a a href="{{ route('login')}}" data-toggle="modal" data-target="#singInPage"style=" padding:0 10px;">Login</a></li>
                         <li class="texte">
-                            <a href="/register" id="regist" class="text-right " data-toggle="modal"
+                            <a href="{{ route('register')}}" id="regist" class="text-right " data-toggle="modal"
                                 data-target="#loginModal" style=" color:#000 "onmouseover="this.style.color='#FF8D1B';" onmouseout="this.style.color='#000';"
                                 >Register</a></li>
 

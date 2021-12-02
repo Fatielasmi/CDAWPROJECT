@@ -12,6 +12,13 @@ class playList extends Model
     protected $fillable = ['name','user_id'];
     protected $connection = 'mysql';
     use HasFactory;
-    
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
+    public function media()
+    {
+        return $this->belongsToMany('App\Models\media');
+    }
 
 }

@@ -25,8 +25,14 @@ Route::get('/getForm', 'App\Http\Controllers\listeMediasController@getForm');
 Route::get('/create', 'App\Http\Controllers\listeMediasController@create');
 Route::post('/create', 'App\Http\Controllers\listeMediasController@addFilm');
 Route::get('/profil', 'App\Http\Controllers\listeMediasController@Viewprofil');
-Route::get('/reg', 'App\Http\Controllers\listeMediasController@register');
-Route::get('/log','App\Http\Controllers\listeMEdiasController@login');
+
+Route::get('/deconnexion','App\Http\Controllers\listeMEdiasController@deconnexion');
+//route: media 
+Route::get('/search','App\Http\Controllers\listeMEdiasController@search')->name('medias.search');
+Route::get('/test','App\Http\Controllers\listeMEdiasController@test');
+// Route::get('/info','App\Http\Controllers\listeMEdiasController@getinfo')->name('info');
+Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@Viewmovie');
+
 
 
 Route::get('/edit/{id}','App\Http\Controllers\listeMEdiasController@edit');
@@ -34,7 +40,7 @@ Route::post('/edit/{id}','App\Http\Controllers\listeMEdiasController@EditFilm');
 
 Route::delete('/film/{id}','App\Http\Controllers\listeMEdiasController@destroy');
 
-Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@viewFilm');
+// Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@viewFilm');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

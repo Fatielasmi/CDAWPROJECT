@@ -12,16 +12,18 @@
         
         <div class="row">
             <div class="col-5">
-
+               
                 <img style="margin: 50px ; margin-bottom:30px; width: 500px;height: 400px;"
-                    src='<?php echo $films[0]->path; ?>'>
+                    src=' {{$media[0]->image}}'>
                 <div style="margin-left: 180px;"> <a class="btn btn-primary" href="#" role="button"> Like </a>
                     <button class="btn btn-danger" type="button">Dislike</button>
                 </div>
             </div>
-            <div class="col-5" style="color: white;">
-                <div style="background-color: #252850; margin: 50px; height: 400px;" class="card  text-white mb-3">
-                    <div class="card-header display-2"><?php echo $films[0]->name; ?></div>
+            <div class="col-7" style="color: white;">
+                <div style="background-color: #FF8D1B; margin: 50px; height: 400px;" class="card  text-white mb-3">
+               
+                    <div class="card-header display-2"></div>
+                   
                     <div class="card-body">
                         <h4 class="card-title">INFORMATIONS </h4>
                         <p class="card-text">
@@ -29,17 +31,17 @@
                             <div class="row">
                                 <div class="col-4">
                                     <div style="margin-bottom: 7px ;">Category :</div>
-                                    <div style="margin-bottom: 7px ;">Director : </div>
+                                    <div style="margin-bottom: 7px ;">Release date: </div>
                                     <div style="margin-bottom: 7px ;">Description : </div>
                                 </div>
                            
                             
                                 <div class="col-8">
-                                    <div style="margin-bottom: 7px ;"> <?php 
-                                    $info=$films[0]->category_id; ?>
-                                    {{$cat=App\Models\category::where('id',$info)->first()->name}}
+                                    <div style="margin-bottom: 7px ;"> {{$cat}}
+                                    
                                     </div>
-                                    <div style="margin-bottom: 7px ;"><?php echo $films[0]->director; ?> </div>
+                                    <div style="margin-bottom: 7px ;">{{$media[0]->year;}} </div>
+                                    <div style="margin-bottom: 7px ;">{{ $media[0]->description; }}  </div>
                                    
                                 </div>
                             </div>
@@ -57,12 +59,22 @@
         <form>
             <div class="form-group" style="margin-left: 70px;margin-right: 70px;">
                 <label style="color: black;"for="message">Comment :</label>
-                <textarea class="form-control" id="message" rows="3"></textarea>
+                <textarea class="form-control" id="message" rows="3" ></textarea>
             </div>
             <div class="float-sm-right" style="margin-right: 70px;"><button class="btn btn-primary"
                     type="submit">Submit</button></div>
 
         </form>
+
+        <div>
+            <h1>Commentaires</h1>
+            @foreach($comment as $com)
+            <div>
+       <h3>{{$com->user_id}}</h3>
+                <p>{{$com->text}}</p>
+</div>
+            @endforeach
+</div>
 
 
     </section>

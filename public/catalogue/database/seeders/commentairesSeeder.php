@@ -8,11 +8,7 @@ use Illuminate\Support\Str;
 
 class commentairesSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
+    
     public function run()
     {
         //Etape 1

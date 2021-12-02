@@ -43,10 +43,7 @@
 
                 </div>
                 <div class="w3_search">
-                    <form action="#" method="post">
-                        <input type="text" name="Search" placeholder="Search" required="">
-                        <input type="submit" value="Go">
-                    </form>
+                    @include('partials.search')
                 </div>
                 <div class="account_desc">
                     <ul>

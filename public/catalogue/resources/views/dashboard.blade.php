@@ -77,7 +77,7 @@
                                                                 <li><a href="#">Favorites</a></li>
                                                                 <li><a href="#">Watchlist</a></li>
                                                                 <li><a href="#">Settings</a></li>
-                                                                <li><a href="/catalogue/public/index.php/index">Log out</a></li>
+                                                                <li><a href="../index.php/deconnexion">Log out</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
