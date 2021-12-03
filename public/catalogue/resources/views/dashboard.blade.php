@@ -153,8 +153,107 @@
 
         <!------------End Header ------------>
 
+        <div class="main">
+        <div class="wrap">  
+                <div class="content">
+                    <div class="content_top">
+                          <div class="heading">
+                        <h3>New Releases</h3>
+                           </div>
+                     </div>
+                    <div class="section group">
 
-  <div class="main">
+                        @foreach($lastFilm as $newFilm )
+                        
+                    <div class='grid_1_of_5 images_1_of_5'>
+                         <a href="{{url('info/'.$newFilm->id)}}"><img src='{{$newFilm->image}}' alt='' /></a>
+                         <h2><a href=""> {{$newFilm->title}}</a></h2>
+                    <div class='price-details'> 
+                    <div class="price-number">
+                                    <p><span class="rupees">
+                                            <a href="{{url('favoris/'.$newFilm->id)}}" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </h4>
+                                </div>   
+                     <div class='clear'></div>
+                      </div>
+                       </div>
+                      @endforeach 
+                    </div>
+                </div>
+
+            <div class="content">
+                <div class="content_top">
+                    <div class="heading">
+                        <h3>TOP 10</h3>
+                    </div>
+                </div>
+                <div class="section group">
+
+                 @foreach($TopFilm as $TFilm )
+ <div class='grid_1_of_5 images_1_of_5'>
+ <a href="{{url('info/'.$TFilm->id)}}"><img src='{{$TFilm->image}}' alt='' /></a>
+ <h2><a href=""> {{$TFilm->title}}</a></h2>
+         <div class='price-details'>
+         <div class="price-number">
+                                    <p><span class="rupees">
+                                            <a href="{{url('favoris/'.$TFilm->id)}}" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </h4>
+                                </div>    
+              <div class='clear'></div>
+         </div>
+ </div>
+
+                    @endforeach 
+                </div>
+            </div>
+
+
+            <div class="content">
+                <div class="content_top">
+                    <div class="heading">
+                        <h3>Comming Soon</h3>
+                    </div>
+                </div>
+                <div class="section group">
+
+                 @foreach($CommingFilm as $CFilm )
+ <div class='grid_1_of_5 images_1_of_5'>
+ <a href="{{url('info/'.$CFilm->id)}}"><img src='{{$CFilm->image}}' alt='' /></a>
+ <h2><a href=""> {{$CFilm->title}}</a></h2>
+         <div class='price-details'>  
+         <div class="price-number">
+                                    <p><span class="rupees">
+                                            <a href="{{url('favoris/'.$CFilm->id)}}" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </h4>
+                                </div>  
+              <div class='clear'></div>
+         </div>
+ </div>
+
+                    @endforeach 
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+ 
+  <!-- <div class="main">
             <div class="wrap">
                 <div class="content">
                     <div class="content_top">
@@ -528,7 +627,7 @@
 
 
 
-
+ -->
 
 
 

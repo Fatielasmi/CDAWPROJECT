@@ -5,6 +5,7 @@ use App\Models\category;
 use App\Models\film;
 use App\Models\media;
 use App\Models\commentaires;
+use Illuminate\Support\Facades\Auth;
 use App\Models\watchList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -85,55 +86,69 @@ class listeMediasController extends Controller
         return view('info',['films'=>$films]);
         
     }
+    // afficher 
     public function Viewmovie($id){
     $media= media::where('id',$id)->get();
     $cat= category::where('id',$media[0]->category_id)->first()->name;
-    // $comment=commentaires::where('media_id',$id)->get();
-      $comment = DB::table('commentaires')->where('media_id', $id)->get();
-      
+  
+        $CommentUser = DB::table('users')
+        ->Join('commentaires', 'users.id', '=', 'commentaires.user_id')
+        ->where('media_id', $id)->get();
 
      
-         return view('info')->with('media',$media)->with('cat',$cat)->with('comment',$comment);
+         return view('info')->with('media',$media)->with('cat',$cat)->with('CommentUser',$CommentUser);
         
     }
- //les deux methodes juste pour afficher la description des films : test
+ //les deux methodes: affichage des films se trouvant dans la BD 
     public function test(){
         $films=media::all();
         $lastFilm = media::where('YEAR','>','2000')->paginate(5);
         $TopFilm = media::orderBy('ID')->paginate(5);
-        $CommingFilm = media::orderBy('YEAR', "DESC")->paginate(5);
-       
-
-        // $MPFilm = DB::table('media')
-        // ->rightJoin('watchlist', 'media.id', '=', 'watchlist.media_id')
-        // ->select('media_id','count(user_id) as score')
-        // ->groupBy('media_id')
-        // ->orderBy('score')
-        // ->paginate(5); 
-        return view('test')->with('lastFilm',$lastFilm)->with('TopFilm',$TopFilm)
+        $CommingFilm = media::orderBy('YEAR', "DESC")->paginate(5); 
+        return view('dashboard')->with('lastFilm',$lastFilm)->with('TopFilm',$TopFilm)
         ->with('CommingFilm',$CommingFilm);
     }
     
+    // ....
     public function getinfo(Request $request){
         $Name=$request->input('name');
         $films= media::where('title','like',"%".$Name."%")->first();
         return view('info')->with('films',$films);
     }
   
-  
+// deconnexion du user   
     public function deconnexion(){
        auth()->logout();
        return redirect('/index');
     }
-
+// chercher un film 
     public function search(){
         $Search=request()->input('Search');
-        // dd($Search);
+        
        $medias= media::where('title','like',"%$Search%")
              
              ->paginate(6);
 
             return view('medias.search')->with('medias',$medias);
      }
+ //stocker le commentaire du user dans la BD
+     public function Store($id){
+        $pseudo=request('pseudo');           
+        $userId = Auth::id();
+                 
+        DB::table('commentaires')->insert([
+            "user_id"=> $userId,
+            "media_id"=>$id,
+            "text"=>$pseudo,
+           
+           ]);
+ 
+         return back();
+     }
+//ajouter le film dans favoris 
+public function addFavoris($id){
+  $medias=media::where('id',$id)->get();
+  return view('medias.search')->with('medias',$medias);
+ }
 
 }

@@ -35,12 +35,18 @@ Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@Viewmovie');
 
 
 
+
 Route::get('/edit/{id}','App\Http\Controllers\listeMEdiasController@edit');
 Route::post('/edit/{id}','App\Http\Controllers\listeMEdiasController@EditFilm');
 
 Route::delete('/film/{id}','App\Http\Controllers\listeMEdiasController@destroy');
 
 // Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@viewFilm');
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Controllers\listeMEdiasController@test')
+->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::post('/info/{id}','App\Http\Controllers\listeMEdiasController@Store');
+    Route::get('/favoris/{id}','App\Http\Controllers\listeMEdiasController@addFavoris');
+ 
+});

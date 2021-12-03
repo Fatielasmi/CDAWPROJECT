@@ -55,11 +55,13 @@
 
             </div>
         </div>
+        
       
-        <form>
+        <form action='../info/{{$media[0]->id}}' method='POST'>
+            @csrf
             <div class="form-group" style="margin-left: 70px;margin-right: 70px;">
                 <label style="color: black;"for="message">Comment :</label>
-                <textarea class="form-control" id="message" rows="3" ></textarea>
+                <textarea class="form-control" id="message" rows="3" name='pseudo' ></textarea>
             </div>
             <div class="float-sm-right" style="margin-right: 70px;"><button class="btn btn-primary"
                     type="submit">Submit</button></div>
@@ -68,11 +70,19 @@
 
         <div>
             <h1>Commentaires</h1>
-            @foreach($comment as $com)
+           
+          
+          
             <div>
-       <h3>{{$com->user_id}}</h3>
-                <p>{{$com->text}}</p>
+           
+            @foreach($CommentUser as $cu)
+            
+       <h3>{{$cu->name}}</h3>
+      
+                <p>{{$cu->text}}</p>
 </div>
+
+      
             @endforeach
 </div>
 

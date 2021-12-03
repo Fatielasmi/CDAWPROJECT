@@ -126,7 +126,16 @@
                     <div class='grid_1_of_5 images_1_of_5'>
                          <a href="{{url('info/'.$newFilm->id)}}"><img src='{{$newFilm->image}}' alt='' /></a>
                          <h2><a href=""> {{$newFilm->title}}</a></h2>
-                    <div class='price-details'>    
+                    <div class='price-details'> 
+                    <div class="price-number">
+                                    <p><span class="rupees">
+                                            <a href="#" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </h4>
+                                </div>   
                      <div class='clear'></div>
                       </div>
                        </div>
@@ -144,9 +153,18 @@
 
                  @foreach($TopFilm as $TFilm )
  <div class='grid_1_of_5 images_1_of_5'>
- <a href=""><img src='{{$TFilm->image}}' alt='' /></a>
+ <a href="{{url('info/'.$TFilm->id)}}"><img src='{{$TFilm->image}}' alt='' /></a>
  <h2><a href=""> {{$TFilm->title}}</a></h2>
-         <div class='price-details'>    
+         <div class='price-details'>
+         <div class="price-number">
+                                    <p><span class="rupees">
+                                            <a href="#" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </h4>
+                                </div>    
               <div class='clear'></div>
          </div>
  </div>
@@ -166,9 +184,18 @@
 
                  @foreach($CommingFilm as $CFilm )
  <div class='grid_1_of_5 images_1_of_5'>
- <a href=""><img src='{{$CFilm->image}}' alt='' /></a>
+ <a href="{{url('info/'.$CFilm->id)}}"><img src='{{$CFilm->image}}' alt='' /></a>
  <h2><a href=""> {{$CFilm->title}}</a></h2>
-         <div class='price-details'>    
+         <div class='price-details'>  
+         <div class="price-number">
+                                    <p><span class="rupees">
+                                            <a href="#" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
+                                <div class="add-cart">
+                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    </h4>
+                                </div>  
               <div class='clear'></div>
          </div>
  </div>
