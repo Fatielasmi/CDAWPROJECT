@@ -45,8 +45,11 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center" style="padding-bottom: 7px">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                    class="rounded-circle" width="150">
+                                <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" -->
+                                    <!-- class="rounded-circle" width="150"> -->
+                            <input type="image" id="ig" alt="Admin"  class="rounded-circle" width="150"
+            src="https://bootdey.com/img/Content/avatar/avatar7.png">
+                                    <input id="imgupload" type="file" style="display:none" onchange="handleFiles(this.files)">
                                 <div class="mt-3">
                                     <h4>John Doe</h4>
                                     
@@ -196,6 +199,33 @@
         </div>
         <!-- //footer -->
 
+
+        <script>
+        document.querySelector("input[type='image']").addEventListener('click', (event) => {
+            document.querySelector("input[type='file']").click();
+        })
+        function handleFiles(files) {
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                let ig = document.getElementById('ig');
+
+                if (!file.type.startsWith('image/')) { continue }
+
+                ig.src = file.name;
+                //A COMPLETER ICI
+
+                const reader = new FileReader();
+                reader.onload = (function (aImg) {
+                    return function (e) {
+                        console.log(e.target.result); aImg.src = e.target.result;
+                    };
+                })
+                    (ig);
+                reader.readAsDataURL(file);
+            }
+        }
+
+    </script>
 </body>
 
 </html>

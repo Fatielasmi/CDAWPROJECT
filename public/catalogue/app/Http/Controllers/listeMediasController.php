@@ -188,6 +188,7 @@ public function  PForm($id){
    ->where('playlist_id',$playL[0]->id)->get();
     return view('medias.playList')->with('playlist',$playL)->with('medias',$medias);
   }
+  //creer une playlist ..
 public function create_playlist(Request $request ,$id){
     $req=$request->input('nom');
     
@@ -198,7 +199,7 @@ public function create_playlist(Request $request ,$id){
       ]);
       return back();
 }
-
+// ajouter le film dans la BD et l'afficher 
 public function addWatchlist($id){
   
     $userId = Auth::id();
@@ -214,5 +215,8 @@ public function addWatchlist($id){
     
 
    }
+  public function Viewprofil(){
+      return view('profil');
+  }
 
 }

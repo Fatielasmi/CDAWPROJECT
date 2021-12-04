@@ -24,7 +24,7 @@ Route::get('/index', 'App\Http\Controllers\listeMediasController@afficher');
 Route::get('/getForm', 'App\Http\Controllers\listeMediasController@getForm');
 Route::get('/create', 'App\Http\Controllers\listeMediasController@create');
 Route::post('/create', 'App\Http\Controllers\listeMediasController@addFilm');
-Route::get('/profil', 'App\Http\Controllers\listeMediasController@Viewprofil');
+// Route::get('/profil', 'App\Http\Controllers\listeMediasController@Viewprofil');
 
 Route::get('/deconnexion','App\Http\Controllers\listeMEdiasController@deconnexion');
 //route: media 
@@ -52,4 +52,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/playlist/{id}','App\Http\Controllers\listeMEdiasController@addToPlayList');
     Route::post('/create_playlist/{id}','App\Http\Controllers\listeMEdiasController@create_playlist');
     Route::get('/watchlist/{id}','App\Http\Controllers\listeMEdiasController@addWatchlist');
+    Route::get('/profil', 'App\Http\Controllers\listeMediasController@Viewprofil');
+
 });
