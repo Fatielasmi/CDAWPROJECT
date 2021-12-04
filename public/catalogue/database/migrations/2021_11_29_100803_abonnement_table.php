@@ -16,7 +16,7 @@ class AbonnementTable extends Migration
         Schema::create('abonnement', function (Blueprint $table) {
             $table->unsignedbiginteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedbiginteger('playlist_id');
+            $table->unsignedinteger('playlist_id');
           $table->foreign('playlist_id')->references('id')->on('playlist');
            $table->primary(['playlist_id','user_id']);
         });

@@ -5,10 +5,14 @@ use App\Models\category;
 use App\Models\film;
 use App\Models\media;
 use App\Models\commentaires;
+use App\Models\media_playlist;
+use App\Models\playList;
+use App\Models\favoris;
 use Illuminate\Support\Facades\Auth;
 use App\Models\watchList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 
 class listeMediasController extends Controller
 {
@@ -147,8 +151,68 @@ class listeMediasController extends Controller
      }
 //ajouter le film dans favoris 
 public function addFavoris($id){
-  $medias=media::where('id',$id)->get();
-  return view('medias.search')->with('medias',$medias);
+  
+  $userId = Auth::id();
+  DB::table('favoris')->insert([
+    "user_id"=> $userId,
+    "media_id"=>$id,
+   ]);
+   $medias = DB::table('media')
+   ->Join('favoris', 'favoris.media_id', '=', 'media.id')
+   ->where('user_id', $userId)->get();
+  
+  return view('medias.favoris')->with('medias',$medias);
  }
+ //ajouter le film dans playlist
+public function  PForm($id){
+  
+   $medias=media::where('id',$id)->get();
+   $userId = Auth::id();
+   $playlist=playlist::where('user_id',$userId)->get();
+    
+   return view('medias.playlistForm')->with('medias',$medias)->with('playlist',$playlist);
+   }
+  
+  public function addToPlayList(Request $request ,$id){
+      ///je dois inserer dans media_playlist 
+      $req=$request->input('nom');
+      $playL=playlist::where('name',$req)->get();
+     
+      DB::table('media_playlist')->insert([
+        "playlist_id"=>$playL[0]->id,
+        "media_id"=>$id,
+        ]);
+        $media=media_playlist::where('playlist_id',$playL[0]->id)->get();
+        $medias = DB::table('media')
+   ->Join('media_playlist', 'media_playlist.media_id', '=', 'media.id')
+   ->where('playlist_id',$playL[0]->id)->get();
+    return view('medias.playList')->with('playlist',$playL)->with('medias',$medias);
+  }
+public function create_playlist(Request $request ,$id){
+    $req=$request->input('nom');
+    
+    $userId = Auth::id();
+    DB::table('playlist')->insert([
+      "name"=>$req,
+      "user_id"=>$userId,
+      ]);
+      return back();
+}
+
+public function addWatchlist($id){
+  
+    $userId = Auth::id();
+    DB::table('watchlist')->insert([
+      "user_id"=> $userId,
+      "media_id"=>$id,
+     ]);
+     $medias = DB::table('media')
+     ->Join('watchlist', 'watchlist.media_id', '=', 'media.id')
+     ->where('user_id', $userId)->get();
+    
+    return view('medias.watchlist')->with('medias',$medias);
+    
+
+   }
 
 }

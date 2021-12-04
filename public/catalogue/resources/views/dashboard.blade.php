@@ -43,10 +43,7 @@
 
                 </div>
                 <div class="w3_search">
-                    <form action="#" method="post">
-                        <input type="text" name="Search" placeholder="Search" required="">
-                        <input type="submit" value="Go">
-                    </form>
+                    @include('partials.search')
                 </div>
                 <div class="account_desc">
                     <ul>
@@ -171,11 +168,18 @@
                     <div class='price-details'> 
                     <div class="price-number">
                                     <p><span class="rupees">
-                                            <a href="{{url('favoris/'.$newFilm->id)}}" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                            <a href="{{url('favoris/'.$newFilm->id)}}" class="like" ><i class="fa fa-heart" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
+                                
+                                <div class="price-number" style='margin-left: 40px'>
+                                    <p><span class="rupees">
+                                            <a href="{{url('watchlist/'.$newFilm->id)}}" class="like" ><i class="fas fa-eye-slash" aria-hidden="true"></i></a>
                                         </span></p>
                                 </div>
                                 <div class="add-cart">
-                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    
+                                    <h4> <a href="{{url('playlist/'.$newFilm->id)}}" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
                                     </h4>
                                 </div>   
                      <div class='clear'></div>
@@ -203,8 +207,13 @@
                                             <a href="{{url('favoris/'.$TFilm->id)}}" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                         </span></p>
                                 </div>
+                                <div class="price-number" style='margin-left: 40px'>
+                                    <p><span class="rupees">
+                                            <a href="{{url('watchlist/'.$TFilm->id)}}" class="like" ><i class="fas fa-eye-slash" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
                                 <div class="add-cart">
-                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    <h4> <a href="{{url('playlist/'.$TFilm->id)}}" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
                                     </h4>
                                 </div>    
               <div class='clear'></div>
@@ -234,8 +243,13 @@
                                             <a href="{{url('favoris/'.$CFilm->id)}}" class="like"><i class="fa fa-heart" aria-hidden="true"></i></a>
                                         </span></p>
                                 </div>
+                                <div class="price-number" style='margin-left: 40px'>
+                                    <p><span class="rupees">
+                                            <a href="{{url('watchlist/'.$CFilm->id)}}" class="like" ><i class="fas fa-eye-slash" aria-hidden="true"></i></a>
+                                        </span></p>
+                                </div>
                                 <div class="add-cart">
-                                    <h4> <a href="#" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
+                                    <h4> <a href="{{url('playlist/'.$CFilm->id)}}" class="like"> <i class="fa fa-plus" aria-hidden="true"></i></a>
                                     </h4>
                                 </div>  
               <div class='clear'></div>

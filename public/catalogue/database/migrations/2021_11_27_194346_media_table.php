@@ -16,7 +16,7 @@ class MediaTable extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->increments('id');
             $table->integer("category_id")->default('4');
-            $table->string("type")->default('movie');
+            $table->string("type")->default('movie')->nullable();
             $table->string("title");
             $table->longText('description');
             $table->year("year");

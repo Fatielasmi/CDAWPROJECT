@@ -48,5 +48,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Con
 Route::middleware('auth')->group(function () {
     Route::post('/info/{id}','App\Http\Controllers\listeMEdiasController@Store');
     Route::get('/favoris/{id}','App\Http\Controllers\listeMEdiasController@addFavoris');
- 
+    Route::get('/playlist/{id}','App\Http\Controllers\listeMEdiasController@PForm');
+    Route::post('/playlist/{id}','App\Http\Controllers\listeMEdiasController@addToPlayList');
+    Route::post('/create_playlist/{id}','App\Http\Controllers\listeMEdiasController@create_playlist');
+    Route::get('/watchlist/{id}','App\Http\Controllers\listeMEdiasController@addWatchlist');
 });

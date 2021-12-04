@@ -14,7 +14,7 @@ class MediaPlaylistTable extends Migration
     public function up()
     {
         Schema::create('media_playlist', function (Blueprint $table) {
-            $table->unsignedbiginteger('playlist_id');
+            $table->unsignedinteger('playlist_id');
              $table->foreign('playlist_id')->references('id')->on('playlist');
              $table->unsignedinteger('media_id');
            $table->foreign('media_id')->references('id')->on('media');

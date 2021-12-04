@@ -13,7 +13,7 @@ class MediaSeeder extends Seeder{
      */
     public function run()
     {
-      $resp1=file_get_contents('https://imdb-api.com/en/API/Top250Movies/k_kvsz7oj1');
+      $resp1=file_get_contents('https://imdb-api.com/en/API/Top250Movies/k_z3f63609');
 
 $rp = json_decode($resp1);
 
@@ -28,7 +28,7 @@ $rp = json_decode($resp1);
    $image=$rp->{'items'}[$i]->{'image'};
    
 
-    $res=file_get_contents('https://imdb-api.com/en/API/Title/k_kvsz7oj1/'.$id);
+    $res=file_get_contents('https://imdb-api.com/en/API/Title/k_z3f63609/'.$id);
     $resp = json_decode($res);
    
     print_r($resp->id);

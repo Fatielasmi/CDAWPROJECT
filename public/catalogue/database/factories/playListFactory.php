@@ -15,7 +15,7 @@ class playListFactory extends Factory
     {
         return [
             
-            'id'=>rand(1,10),
+            
             'name' => $this->faker->unique()->word,
             'user_id' => rand(1, 10),
         ];
