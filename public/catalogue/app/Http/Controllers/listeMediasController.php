@@ -10,6 +10,7 @@ use App\Models\playList;
 use App\Models\favoris;
 use Illuminate\Support\Facades\Auth;
 use App\Models\watchList;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -19,8 +20,41 @@ class listeMediasController extends Controller
     public function afficher(){
         return view('index');
     }
-    public function movie(){
-        return view('movie');
+   
+    public function GoTVShows(){
+        $userId = Auth::id();
+        $user=User::where('id',$userId)->get();
+        $movies1=media::orderBy('YEAR', "DESC")->paginate(5);
+        $movies2=media::orderBy('YEAR', "ASC")->paginate(5);
+        $movies3=media::orderBy('id', "DESC")->paginate(5);
+        $movies4=media::orderBy('id', "ASC")->paginate(5);
+        return view('shows')->with('movies1',$movies1)->with('movies2',$movies2)
+        ->with('movies3',$movies3)->with('movies4',$movies4)->with('user',$user);
+    }
+    public function GoMovies(){
+        $userId = Auth::id();
+        $user=User::where('id',$userId)->get();
+        $movies1=media::orderBy('id', "DESC")->paginate(5);
+        $movies2=media::orderBy('YEAR', "DESC")->paginate(5);
+        $movies3=media::orderBy('YEAR',"<", "2000")->paginate(5);
+        $movies4=media::orderBy('id', "ASC")->paginate(5);
+        return view('movies')->with('movies1',$movies1)->with('movies2',$movies2)
+        ->with('movies3',$movies3)->with('movies4',$movies4)->with('user',$user);
+    }
+    public function GoKids(){
+        $userId = Auth::id();
+        $user=User::where('id',$userId)->get();
+        return view('kids')->with('user',$user);
+    }
+    public function GoMangas(){
+        $userId = Auth::id();
+        $user=User::where('id',$userId)->get();
+        return view('mangas')->with('user',$user);
+    }
+    public function GoMusic(){
+        $userId = Auth::id();
+        $user=User::where('id',$userId)->get();
+        return view('music')->with('user',$user);
     }
     public function getForm(){
        $films= film::all();
@@ -105,12 +139,14 @@ class listeMediasController extends Controller
     }
  //les deux methodes: affichage des films se trouvant dans la BD 
     public function test(){
+        $userId = Auth::id();
+        $user=User::where('id',$userId)->get();
         $films=media::all();
-        $lastFilm = media::where('YEAR','>','2000')->paginate(5);
+        $lastFilm = media::where('YEAR','>','2000')->orderBy('YEAR', "ASC")->paginate(5);
         $TopFilm = media::orderBy('ID')->paginate(5);
         $CommingFilm = media::orderBy('YEAR', "DESC")->paginate(5); 
         return view('dashboard')->with('lastFilm',$lastFilm)->with('TopFilm',$TopFilm)
-        ->with('CommingFilm',$CommingFilm);
+        ->with('CommingFilm',$CommingFilm)->with('user',$user);
     }
     
     // ....
@@ -188,6 +224,28 @@ public function  PForm($id){
    ->where('playlist_id',$playL[0]->id)->get();
     return view('medias.playList')->with('playlist',$playL)->with('medias',$medias);
   }
+ 
+ 
+  public function GoPlayList(){
+
+    $userId = Auth::id();
+    $playlist=playlist::where('user_id',$userId)->get();
+   
+    
+   
+      return view('medias.ChoixPlaylist')->with('playlist', $playlist);
+}
+public function dataPlaylist($id){
+
+ $medias = DB::table('media')
+    ->Join('media_playlist', 'media_playlist.media_id', '=', 'media.id')
+     ->Join('playlist','playlist.id', '=', 'media_playlist.playlist_id')
+    ->where('playlist_id',$id)
+    ->get();
+    return view('medias.playList')->with('medias',$medias);
+}
+
+
   //creer une playlist ..
 public function create_playlist(Request $request ,$id){
     $req=$request->input('nom');
@@ -199,6 +257,7 @@ public function create_playlist(Request $request ,$id){
       ]);
       return back();
 }
+
 // ajouter le film dans la BD et l'afficher 
 public function addWatchlist($id){
   
@@ -215,8 +274,62 @@ public function addWatchlist($id){
     
 
    }
+   //photo de profil 
   public function Viewprofil(){
-      return view('profil');
+    $userId = Auth::id();
+    $user=User::where('id',$userId)->get();
+    return view('profile')->with('user',$user);
+    
   }
+  public function changeprofil(Request $request){
+    
+    
+    print_r($_FILES);
+  }
+  public function UserEditProfile(Request $req){
 
+    // $nom = $req->input('nom');
+    // $prenom = $req->input('prenom');
+    // $email = $req->input('email');
+    //  $id = $req->input('id');
+    // $image = $req->input('image');
+   
+   if ($req->hasfile('image')){
+    $id = Auth::id();
+       $file = $req->file('image');
+       $extension = $file->getClientOriginalExtension();
+       $filename = time().'.'.$extension;
+       $file->move('assets/img/',$filename);
+       User::where('id', $id)->update(['profile_photo_path'=>$filename]);
+       return redirect('/profil');
+   }
+   else {
+       return $req;
+       User::where('id', $id)->update(['profile_photo_path'=>'']);
+
+   }
+
+
+
+}
+
+public function GoFavoris(){
+    $userId = Auth::id();
+    $user=User::where('id',$userId)->get();
+   $medias = DB::table('media')
+   ->Join('favoris', 'favoris.media_id', '=', 'media.id')
+   ->where('user_id', $userId)->get();
+  
+  return view('medias.favoris')->with('medias',$medias)->with('user',$user);
+
+}
+public function GoWatchlist(){
+    $userId = Auth::id();
+    $medias = DB::table('media')
+    ->Join('watchlist', 'watchlist.media_id', '=', 'media.id')
+    ->where('user_id', $userId)->get();
+   
+   return view('medias.watchlist')->with('medias',$medias);
+
+}
 }
