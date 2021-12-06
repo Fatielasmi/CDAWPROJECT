@@ -3,10 +3,11 @@
 
 <head>
 
-    <title>Free Movies Store Website Template | Home :: w3layouts</title>
+    <title>MStore</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="../../public/css/home.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../../public/css/home.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../../public/css/slider.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../../../public/js/model.js" rel="stylesheet" type="text/css" media="all" />
     <!-- font-awesome icons -->
@@ -105,6 +106,9 @@
                                                                 <li><i class="fas fa-heart" style="margin-top: 14px;"></i></li>
                                                                 <li><i class="fas fa-history" style="margin-top: 16px;"></i></li>
                                                                 <li><i class="fas fa-music" style="margin-top: 16px;"></i></li>
+                                                                @if (Auth::user()['role'] == "admin")
+                                                                <li> <i class="fas fa-user-shield"style="margin-top: 16px;"></i></li>
+                                                                @endif
                                                                 <li><i class="fas fa-sign-out-alt" style="margin-top: 15px;"></i></li>
                                                             </ul>
                                                         </div>
@@ -114,6 +118,10 @@
                                                                 <li><a href="../index.php/favoris">Favorites</a></li>
                                                                 <li><a href="../index.php/watchlist">Watchlist</a></li>
                                                                 <li><a href="../index.php/playlist">Playlist</a></li>
+                                                                @if (Auth::user()['role'] == "admin")
+                                                                <li class="nav-item"><a class="nav-link" href="{{ url('/administration') }}">Administration</a></li>    
+                   
+                                                               @endif
                                                                 <li><a href="../index.php/deconnexion">Log out</a></li>
                                                             </ul>
                                                         </div>

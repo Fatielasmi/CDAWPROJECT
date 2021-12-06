@@ -30,8 +30,8 @@ Route::post('/create', 'App\Http\Controllers\listeMediasController@addFilm');
 
 Route::get('/deconnexion','App\Http\Controllers\listeMEdiasController@deconnexion');
 //route: media 
-Route::get('/search','App\Http\Controllers\listeMEdiasController@search')->name('medias.search');
-Route::get('/test','App\Http\Controllers\listeMEdiasController@test');
+
+// Route::get('/test','App\Http\Controllers\listeMEdiasController@test');
 // Route::get('/info','App\Http\Controllers\listeMEdiasController@getinfo')->name('info');
 Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@Viewmovie');
 
@@ -50,8 +50,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', 'App\Http\Con
 
 //use when u r connected 
 Route::middleware('auth')->group(function () {
+    Route::get('/search','App\Http\Controllers\listeMEdiasController@search')->name('medias.search');
     Route::post('/info/{id}','App\Http\Controllers\listeMEdiasController@Store');
+   
     Route::get('/favoris/{id}','App\Http\Controllers\listeMEdiasController@addFavoris');
+   
     Route::get('/favoris','App\Http\Controllers\listeMEdiasController@GoFavoris');
     Route::get('/playlist/{id}','App\Http\Controllers\listeMEdiasController@PForm');
     Route::post('/playlist/{id}','App\Http\Controllers\listeMEdiasController@addToPlayList');
@@ -67,5 +70,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/mangas','App\Http\Controllers\listeMEdiasController@GoMangas');
     Route::get('/music','App\Http\Controllers\listeMEdiasController@GoMusic');
     Route::get('/playliste/{id}','App\Http\Controllers\listeMEdiasController@dataPlaylist');
+    Route::get('/administration','App\Http\Controllers\listeMEdiasController@crud');
+    Route::post('/addUser','App\Http\Controllers\listeMEdiasController@addUser');
+    Route::get('/Edit_User/{id}','App\Http\Controllers\listeMEdiasController@FormEditUser');
+    Route::post('/Useredit/{id}','App\Http\Controllers\listeMEdiasController@EditUser');
+    Route::get('/delete_User/{id}','App\Http\Controllers\listeMEdiasController@deleteUser'); 
+    Route::post('/user/update','App\Http\Controllers\listeMEdiasController@UpdateUser');
+
 
 });

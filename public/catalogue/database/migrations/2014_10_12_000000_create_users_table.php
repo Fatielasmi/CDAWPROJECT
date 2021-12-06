@@ -19,9 +19,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('role')->default('user');
+            $table->boolean('banner')->default(false);
             $table->rememberToken();
+
             $table->foreignId('current_team_id')->nullable();
-            $table->longtext('profile_photo_path', 2048)->default('user_profil.png');
+            $table->string('profile_photo_path', 2048)->default('user_profil.png');
             $table->timestamps();
         });
     }

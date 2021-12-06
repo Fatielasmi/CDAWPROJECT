@@ -6,8 +6,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../../public/css/test.css">
-<link href="../../public/css/movies.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="../../../public/css/test.css">
+<link href="../../../public/css/movies.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../../public/js/model.js" rel="stylesheet" type="text/css" media="all" />
+<link href="../../../public/css/home.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../public/css/movies.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="css/font-awesome.min.css" />
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -72,7 +75,7 @@
             <div class="nav_list">
                 <ul>
                     <div class="logo">
-                        <a href="index.html"><img src="../../public/images/logo.png" alt="" /></a>
+                        <a href="index.html"><img src="../../../public/images/logo.png" alt="" /></a>
                     </div>
                 </ul>
 
@@ -90,7 +93,7 @@
                                 <div class="nav_right">
                                             <ul>
                                                 <li class="nr_li dd_main">
-                                                    <img class="rounded-circle" src="../../public/assets/img/{{$user[0]->profile_photo_path}}" alt="profile_img">
+                                                    <img class="rounded-circle" src="../../../public/assets/img/{{$user[0]->profile_photo_path}}" alt="profile_img">
 
                                                     <div class="dd_menu">
                                                         <div class="dd_left">
@@ -141,7 +144,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav" >
        <li ><a href="#" style ="color : #fb8b1b ">..</a></li> 
-        <li ><a href="../index.php/dashboard">Home</a></li>
+        <li ><a href="../dashboard">Home</a></li>
         <li><a href="../index.php/movies">Movies</a></li>
         <li><a href="../index.php/TVShows">TV Shows</a></li>
         <li><a href="../index.php/music">Music</a></li>

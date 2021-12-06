@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap CRUD Data Table for Database with Modal Form</title>
+    <title>MStore</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -66,15 +66,17 @@
                                     <label for="selectAll"></label>
                                 </span>
                             </th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
+                            <th>Name</th>
+                            
                             <th>Email</th>
-                            <th>Password</th>
+                            <th>Role</th> 
+                            <th>banner</th>
 
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
+                    @foreach($users as $user)
                         <tr>
                             <td>
                                 <span class="custom-checkbox">
@@ -82,94 +84,22 @@
                                     <label for="checkbox1"></label>
                                 </span>
                             </td>
-                            <td>Thomas Hardy</td>
-                            <td> Hardy</td>
-                            <td>thomashardy@mail.com</td>
-                            <td>Thomas1234</td>
+                           
+                            <td>{{$user->name}}</td>
+                            <td> {{$user->email}}</td>
+                            <td>{{$user->role}}</td>
+                            <td>{{$user->banner}}</td>
+                           
 
                             <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
+                           
+                                <a href="Edit_User/{{$user->id}}" class="edit" data-toggle="modal"><i class="material-icons"
                                         data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
+                                <a href="../index.php/delete_User/{{$user->id}}" class="delete" data-toggle="modal"><i
                                         class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                             </td>
                         </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox2" name="options[]" value="1">
-                                    <label for="checkbox2"></label>
-                                </span>
-                            </td>
-                            <td>Dominique </td>
-                            <td> Perrier</td>
-                            <td>dominiqueperrier@mail.com</td>
-                            <td>Dominique123456</td>
-
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                        data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox3" name="options[]" value="1">
-                                    <label for="checkbox3"></label>
-                                </span>
-                            </td>
-                            <td>Maria Anders</td>
-                            <td> Anders</td>
-                            <td>mariaanders@mail.com</td>
-                            <td>MariaAnders1234</td>
-
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                        data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox4" name="options[]" value="1">
-                                    <label for="checkbox4"></label>
-                                </span>
-                            </td>
-                            <td>Fran </td>
-                            <td> Wilson</td>
-                            <td>franwilson@mail.com</td>
-                            <td>FranFran123</td>
-
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                        data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox5" name="options[]" value="1">
-                                    <label for="checkbox5"></label>
-                                </span>
-                            </td>
-                            <td>Martin </td>
-                            <td> Blank</td>
-                            <td>martinblank@mail.com</td>
-                            <td>MartinB2345</td>
-
-                            <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
-                                        data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i
-                                        class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
                 <div class="clearfix">
@@ -187,31 +117,32 @@
             </div>
         </div>
     </div>
-    <!-- Edit Modal HTML -->
+    <!-- Add User HTML -->
     <div id="addEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form>
+                <form action='../index.php/addUser' method='POST'>
+                @csrf
                     <div class="modal-header">
                         <h4 class="modal-title">Add User</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" class="form-control" required>
+                            <label> Name</label>
+                            <input name="name" type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" class="form-control" required>
+                            <input name="email" type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <input name='role' type="text" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <textarea class="form-control" required></textarea>
+                            <textarea name='password' class="form-control" required></textarea>
                         </div>
 
                     </div>
@@ -223,63 +154,6 @@
             </div>
         </div>
     </div>
-    <!-- Edit Modal HTML -->
-    <div id="editEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Edit User</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <textarea class="form-control" required></textarea>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-info" value="Save">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Delete Modal HTML -->
-    <div id="deleteEmployeeModal" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h4 class="modal-title">Delete Employee</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Are you sure you want to delete these Records?</p>
-                        <p class="text-warning"><small>This action cannot be undone.</small></p>
-                    </div>
-                    <div class="modal-footer">
-                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                        <input type="submit" class="btn btn-danger" value="Delete">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+   
+ 
 </body>
-
-</html>

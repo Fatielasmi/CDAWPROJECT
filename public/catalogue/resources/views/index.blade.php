@@ -71,12 +71,12 @@
                             <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0"
                                  ><strong> Categories</strong></p>
 
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">TVShows</a></li>
-                            <li><a href="#">Movie</a></li>
-                            <li><a href="#">Anime</a></li>
-                            <li><a href="#">Music</a></li>
-                            <li><a href="#">Kids</a></li>
+                            <li><a href="../index.php/register">Home</a></li>
+                            <li><a href="../index.php/register">TVShows</a></li>
+                            <li><a href="../index.php/register">Movie</a></li>
+                            <li><a href="../index.php/register">Anime</a></li>
+                            <li><a href="../index.php/register">Music</a></li>
+                            <li><a href="../index.php/register">Kids</a></li>
                         </ul>
                       
                     </div>
@@ -100,7 +100,99 @@
             </div>
         </div>
     </div>
----< les films et footer 
+    <div class="main">
+        <div class="wrap">  
+                <div class="content">
+                    <div class="content_top">
+                          <div class="heading">
+                        <h3>New Releases</h3>
+                           </div>
+                     </div>
+                    <div class="section group">
+
+                        @foreach($lastFilm as $newFilm )
+                        
+                    <div class='grid_1_of_5 images_1_of_5'>
+                         <a href="../index.php/register"><img src='{{$newFilm->image}}' alt='' /></a>
+                        <div style='width: 200px; height: 38px;'>
+                         <h2><a href=""> {{$newFilm->title}}</a></h2>
+    </div>
+                    <div class='price-details'> 
+                    <div class="price-number">
+                                   
+                                </div>
+                                
+                               
+                                  
+                     <div class='clear'></div>
+                      </div>
+                       </div>
+                      @endforeach 
+                    </div>
+                </div>
+
+            <div class="content">
+                <div class="content_top">
+                    <div class="heading">
+                        <h3>TOP 10</h3>
+                    </div>
+                </div>
+                <div class="section group">
+
+                 @foreach($TopFilm as $TFilm )
+ <div class='grid_1_of_5 images_1_of_5'>
+ <a href=""><img src='{{$TFilm->image}}' alt='' /></a>
+ <div style='width: 200px; height: 38px;'>
+ <h2><a href="../index.php/register"> {{$TFilm->title}}</a></h2>
+    </div>
+         <div class='price-details'>
+         <div class="price-number">
+                                    
+                                </div>
+                                  
+              <div class='clear'></div>
+         </div>
+ </div>
+
+                    @endforeach 
+                </div>
+            </div>
+
+
+            <div class="content">
+                <div class="content_top">
+                    <div class="heading">
+                        <h3>Comming Soon</h3>
+                    </div>
+                </div>
+                <div class="section group">
+
+                 @foreach($CommingFilm as $CFilm )
+ <div class='grid_1_of_5 images_1_of_5'>
+
+ <a href="../index.php/register"><img src='{{$CFilm->image}}' alt='' /></a>
+ <div style='width: 200px; height: 38px;'>
+ <h2><a href=""> {{$CFilm->title}}</a></h2>
+    </div>
+         <div class='price-details'>  
+         <div class="price-number">
+                                   
+                                </div>
+                               
+              <div class='clear'></div>
+         </div>
+ </div>
+
+                    @endforeach 
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    @include('partials.footer')
 
 </body>
 
