@@ -1,5 +1,5 @@
 @include('partials.template2')
-<h1> Welcome to your {{$medias[0]->name}}
+<h1> Welcome to your playlist:</h1>
 @foreach($medias as $media)
 
 <div class="main">

@@ -1,0 +1,46 @@
+# Auteurs :
+HICHAM Imane
+EL ASMI Fatima Zahrae 
+
+# Jalon 4 : rendu final du projet 
+
+Dans ce projet nous avons realise une application WEB de gestion des medias.
+Un media -dans notre cas- peut etre un film(movie), une chanson(musique) , une serie(TVShows) ou un mangas;Aussi il a plusieurs categories :action ,drama , comedie ,romance ,horror et animes.
+
+
+
+Deux profils seront définis sur le site : un profil administrateur et un profil utilisateur.
+(le profil administrateur est cree en changeant le role d'un utilisateur de "user" a "admin" directement a partir de la base de donnees )
+-Fonctionnalités implementees pour un utilisateur :
+.Création d'un compte utilisateur 
+.Connexion au site
+Un utilisateur connecté peut :
+.mettre à jour son profil (avatar, nom, email,mot de passe),la modification du mot de passe se fait par la fonctionnalite "forget password" de Laravel qui envoie un email a l'utilisateur et lui permet de meetre a jour son mot de passe.
+.consulter, rechercher  les média disponibles
+.marquer un média comme vu (celui-ci apparaitra dans watchlist)
+.attribuer un "j'aime" à média (celui -ci apparaitra dans favoris)
+.creer une playlist
+.ajouter un media a une nouvelle playlist ou une palylist deja existante .(quand il clique sur le bouton + il aura le choix d'ajouter le media dans une playlist existante ou de creer une nouvelle playlist)
+.consulter -directement q trqvers son menu-son historique de visonnage(watchList), son playlist et sa liste favoris 
+.ajouter un commentaire a un media et afficher les commentaires des autres utilisateurs sur le meme media;
+Un utilisateur non connecte ne peut faire aucune de ces fonctionnalites, il sera directement redirige vers la page d'acceuil.
+-Fonctionnalités implementees pour un administrateur :
+.un administrateur est tout d'abord un utilisateur donc il peut faire toutes les fonctionnalites citees au dessus.
+.ajouter ou supprimer  un utilisateur.
+.modifier les informations d'un utilisateur.
+.modifier le role d'un utilisateur (le rendre admin)
+.bannir un utilisateur.
+
+
+
+Par manque de temps ,on n'a pas pu ajouter le role moderateur,la fonctionnalite d'abonnement a une playlist d'un autre utilisateur.
+
+Identifiants dur le site :
+utilisateur 1 :celine
+Utilisateur 2 :imane
+
+Administrateur : fati 
+
+Remarque :
+Vu qu'on utlise la plateforme docker ,le chargement des pages prend enormement de temps(minimum 8 minutes ) ,et du coup on etait obligees de suspendre l'enregistremant a chaque chargement de chaque page pour ne pas avoir une tres longue video (c'est pourquoi vous allez remarquer -sur la video- la suspension continue de l enregistrement) 
+Lien vers la video de demonstration:

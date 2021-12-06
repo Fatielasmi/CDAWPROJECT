@@ -33,7 +33,7 @@ Route::get('/deconnexion','App\Http\Controllers\listeMEdiasController@deconnexio
 
 // Route::get('/test','App\Http\Controllers\listeMEdiasController@test');
 // Route::get('/info','App\Http\Controllers\listeMEdiasController@getinfo')->name('info');
-Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@Viewmovie');
+
 
 
 
@@ -77,5 +77,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/delete_User/{id}','App\Http\Controllers\listeMEdiasController@deleteUser'); 
     Route::post('/user/update','App\Http\Controllers\listeMEdiasController@UpdateUser');
 
-
+    Route::get('/info/{id}','App\Http\Controllers\listeMEdiasController@Viewmovie');
 });

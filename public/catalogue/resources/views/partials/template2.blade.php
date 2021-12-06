@@ -75,7 +75,7 @@
             <div class="nav_list">
                 <ul>
                     <div class="logo">
-                        <a href="index.html"><img src="../../../public/images/logo.png" alt="" /></a>
+                        <a href="index.html"><img src="../../public/images/logo.png" alt="" /></a>
                     </div>
                 </ul>
 
@@ -93,7 +93,7 @@
                                 <div class="nav_right">
                                             <ul>
                                                 <li class="nr_li dd_main">
-                                                    <img class="rounded-circle" src="../../../public/assets/img/{{$user[0]->profile_photo_path}}" alt="profile_img">
+                                                    <img class="rounded-circle" src="../../public/assets/img/{{$user[0]->profile_photo_path}}" alt="profile_img">
 
                                                     <div class="dd_menu">
                                                         <div class="dd_left">

@@ -19,16 +19,13 @@ class listeMediasController extends Controller
 {
     // *********afficher les pages : index  tvshows movies kids mangas music *******//
     public function afficher(){
-       
-       
         $films=media::all();
         $lastFilm = media::where('YEAR','>','2000')->orderBy('YEAR', "ASC")->paginate(5);
         $TopFilm = media::orderBy('ID')->paginate(5);
         $CommingFilm = media::orderBy('YEAR', "DESC")->paginate(5); 
         return view('index')->with('lastFilm',$lastFilm)->with('TopFilm',$TopFilm)
         ->with('CommingFilm',$CommingFilm);
-       
-    }
+       }
    
     public function GoTVShows(){
         $userId = Auth::id();
@@ -40,6 +37,7 @@ class listeMediasController extends Controller
         return view('shows')->with('movies1',$movies1)->with('movies2',$movies2)
         ->with('movies3',$movies3)->with('movies4',$movies4)->with('user',$user);
     }
+
     public function GoMovies(){
         $userId = Auth::id();
         $user=User::where('id',$userId)->get();
@@ -50,104 +48,38 @@ class listeMediasController extends Controller
         return view('movies')->with('movies1',$movies1)->with('movies2',$movies2)
         ->with('movies3',$movies3)->with('movies4',$movies4)->with('user',$user);
     }
+
     public function GoKids(){
         $userId = Auth::id();
         $user=User::where('id',$userId)->get();
         return view('kids')->with('user',$user);
     }
+
     public function GoMangas(){
         $userId = Auth::id();
         $user=User::where('id',$userId)->get();
         return view('mangas')->with('user',$user);
     }
+
     public function GoMusic(){
         $userId = Auth::id();
         $user=User::where('id',$userId)->get();
         return view('music')->with('user',$user);
     }
 
-
-    // public function getForm(){
-    //    $films= film::all();
-      
-    //    return view ('showTable')->with('films', $films);
-    // }
-    // public function create()
-    // {
-    //     $categories= category::all();
-    //     return view('create')->with('categories',$categories);
-    // }
- 
-    // public function addFilm(Request $req){
-    //     $name = $req->input("name");
-    //     $director = $req->input("director");
-    //     $category = $req->input("category");
-    //     $path = $req->input("path");
-       
-    //     $data = [
-    //         'name'=>$name,
-    //         'director'=>$director,
-    //         'category_id'=>$category,
-    //         'path'=>$path
-
-    //     ];
-    //    film::create($data);
-   
-    //     print_r($req->input());
-       
-     
-    // return redirect('getForm');
-
-    // }
-
-    // public function edit($id)
-    // {
-    //     $films = film::find($id);
-    //     return view('filmFormEdit')->with('films', $films);
-    // }
-
-
-    // public function EditFilm(Request $req, $id){
-
-    //     $name = $req->input("name");
-    //     $name = $req->input("name");
-    //     $director = $req->input("director");
-    //     $category = $req->input("category");
-    //     $path = $req->input("path");
-
-    //    film::where('id', $id)->update(['name' => $name,'director'=>$director,'category_id'=>$category,'path'=>$path]);
-    //    //print_r($req->input());
-    //    return redirect('getForm');
-   
-
-    // }
-
-    // public function destroy($id)
-    // {
-    //     film::destroy($id);
-    //     return redirect('getForm')->with('flash_message', 'Contact deleted!');  
-    // }
-
-    // public function viewFilm($id){
-
-    //     $films = film::where('id', $id)->get();
-        
-    //     return view('info',['films'=>$films]);
-        
-    // }
-    // afficher 
+    // afficher la page de description du media 
     public function Viewmovie($id){
+        $userId = Auth::id();
+        $user=User::where('id',$userId)->get();
     $media= media::where('id',$id)->get();
     $cat= category::where('id',$media[0]->category_id)->first()->name;
-  
         $CommentUser = DB::table('users')
         ->Join('commentaires', 'users.id', '=', 'commentaires.user_id')
         ->where('media_id', $id)->get();
-
-     
-         return view('info')->with('media',$media)->with('cat',$cat)->with('CommentUser',$CommentUser);
+         return view('info')->with('media',$media)->with('cat',$cat)->with('CommentUser',$CommentUser)->with('user',$user);
         
     }
+
  //les deux methodes: affichage des films se trouvant dans la BD 
     public function test(){
         $userId = Auth::id();
@@ -159,7 +91,6 @@ class listeMediasController extends Controller
         return view('dashboard')->with('lastFilm',$lastFilm)->with('TopFilm',$TopFilm)
         ->with('CommingFilm',$CommingFilm)->with('user',$user);
     }
-    
     // ....
     public function getinfo(Request $request){
         $Name=$request->input('name');
@@ -172,18 +103,17 @@ class listeMediasController extends Controller
        auth()->logout();
        return redirect('/index');
     }
+
 // chercher un film 
     public function search(){
         $userId = Auth::id();
         $user=User::where('id',$userId)->get();
         $Search=request()->input('Search');
-        
-       $medias= media::where('title','like',"%$Search%")
-             
+       $medias= media::where('title','like',"%$Search%") 
              ->paginate(6);
-
             return view('medias.search')->with('medias',$medias)->with('user',$user);
      }
+
  //stocker le commentaire du user dans la BD
      public function Store($id){
         $pseudo=request('pseudo');           
@@ -193,18 +123,15 @@ class listeMediasController extends Controller
             "user_id"=> $userId,
             "media_id"=>$id,
             "text"=>$pseudo,
-           
            ]);
- 
          return back();
      }
+
      //********* Favoris : affichage et ajout **********//
 //ajouter le film dans favoris 
 public function addFavoris($id){
- 
   $userId = Auth::id();
   $user=User::where('id',$userId)->get();
-
   DB::table('favoris')->insert([
     "user_id"=> $userId,
     "media_id"=>$id,
@@ -212,38 +139,36 @@ public function addFavoris($id){
    $medias = DB::table('media')
    ->Join('favoris', 'favoris.media_id', '=', 'media.id')
    ->where('user_id', $userId)->get();
-  
   return view('medias.favoris')->with('medias',$medias)->with('user',$user);
  }
+
  // afficher la page favoris depuis le menu : sans ajout 
  public function GoFavoris(){
     $userId = Auth::id();
     $user=User::where('id',$userId)->get();
    $medias = DB::table('media')
    ->Join('favoris', 'favoris.media_id', '=', 'media.id')
-   ->where('user_id', $userId)->get();
-  
+   ->where('user_id', $userId)->get(); 
   return view('medias.favoris')->with('medias',$medias)->with('user',$user);
-
 }
-
 
  //*****Playlist :afficher , selectionner playlist voulu, ajouter *****/
 
- // redirige vers le form servznt a choisir ou creer pl
+ // rediriger vers le form servant a choisir ou creer pl
 public function  PForm($id){
-  
+    $userId = Auth::id();
+  $user=User::where('id',$userId)->get();
    $medias=media::where('id',$id)->get();
    $userId = Auth::id();
    $playlist=playlist::where('user_id',$userId)->get();
-    
-   return view('medias.playlistForm')->with('medias',$medias)->with('playlist',$playlist);
+   return view('medias.playlistForm')->with('medias',$medias)->with('playlist',$playlist)->with('user',$user);
    }
-
-   //creation du pL
+   
+   //creation du pL a partir du formulaire
    public function create_playlist(Request $request ,$id){
+    $userId = Auth::id();
+    $user=User::where('id',$userId)->get();
     $req=$request->input('nom');
-    
     $userId = Auth::id();
     DB::table('playlist')->insert([
       "name"=>$req,
@@ -251,11 +176,12 @@ public function  PForm($id){
       ]);
       return back();
 }
- // ajout de medias au pL  
+ // recuperation des donnees et ajout du pL dans la bd 
   public function addToPlayList(Request $request ,$id){
+    $userId = Auth::id();
+    $user=User::where('id',$userId)->get();
       $req=$request->input('nom');
       $playL=playlist::where('name',$req)->get();
-     
       DB::table('media_playlist')->insert([
         "playlist_id"=>$playL[0]->id,
         "media_id"=>$id,
@@ -264,7 +190,7 @@ public function  PForm($id){
         $medias = DB::table('media')
    ->Join('media_playlist', 'media_playlist.media_id', '=', 'media.id')
    ->where('playlist_id',$playL[0]->id)->get();
-    return view('medias.playList')->with('playlist',$playL)->with('medias',$medias);
+    return view('medias.playList')->with('playlist',$playL)->with('medias',$medias)->with('user',$user);
   }
  
  // choisir le pL dans lequel vous voulez mettre medias
