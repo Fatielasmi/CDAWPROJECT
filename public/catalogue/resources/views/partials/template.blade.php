@@ -1,33 +1,4 @@
-
-<!DOCTYPE HTML>
-
-<head>
-
-    <title>MStore</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="../../../public/css/home.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../public/css/home.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../../public/css/slider.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../../../../public/js/model.js" rel="stylesheet" type="text/css" media="all" />
-    <!-- font-awesome icons -->
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    <!-- //font-awesome icons -->
-    <!-- js -->
-    <script src="../../public/js/bootstrap.min.js"></script>
-    
-    <!-- //js -->
-    <script type="text/javascript" src="../../public/js/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="../../public/js/move-top.js"></script>
-    <script type="text/javascript" src="../../public/js/easing.js"></script>
-    <script type="text/javascript" src="../../public/js/jquery.nivo.slider.js"></script>
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-    <script type="text/javascript">
+<script type="text/javascript">
         $(window).load(function () {
             $('#slider').nivoSlider();
         });
@@ -71,7 +42,6 @@
             })
         </script>
 </head>
-
 <body>
     <div class="header" style="padding-top: 0px;">
         <div class="headertop_desc">

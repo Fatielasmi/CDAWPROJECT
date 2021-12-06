@@ -43,7 +43,7 @@ class listeMediasController extends Controller
         $user=User::where('id',$userId)->get();
         $movies1=media::orderBy('id', "DESC")->paginate(5);
         $movies2=media::orderBy('YEAR', "DESC")->paginate(5);
-        $movies3=media::orderBy('YEAR',"<", "2000")->paginate(5);
+        $movies3=media::orderBy('YEAR', "ASC")->paginate(5);
         $movies4=media::orderBy('id', "ASC")->paginate(5);
         return view('movies')->with('movies1',$movies1)->with('movies2',$movies2)
         ->with('movies3',$movies3)->with('movies4',$movies4)->with('user',$user);
@@ -263,7 +263,7 @@ public function addWatchlist($id){
        $extension = $file->getClientOriginalExtension();
        $filename = time().'.'.$extension;
        $file->move('assets/img/',$filename);
-       User::where('id', $id)->update(['profile_photo_path'=>$filename]);
+       User::where('id', $userId)->update(['profile_photo_path'=>$filename]);
        return redirect('/profil');
    }
    else {

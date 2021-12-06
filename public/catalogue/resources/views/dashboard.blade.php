@@ -1,4 +1,29 @@
+<!DOCTYPE HTML>
 
+<head>
+
+    <title>MStore</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="../../public/css/home.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../public/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome icons -->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="../../public/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../public/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <script type="text/javascript" src="../../public/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../public/js/move-top.js"></script>
+    <script type="text/javascript" src="../../public/js/easing.js"></script>
+    <script type="text/javascript" src="../../public/js/jquery.nivo.slider.js"></script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+ 
 @include('partials.template')
             <div class="wrap">
 

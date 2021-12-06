@@ -1,3 +1,24 @@
+<html>
+</head>
+
+<title>Mstore</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../public/css/test.css">
+<link href="../../public/css/home.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="css/font-awesome.min.css" />
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+     <!-- //font-awesome icons -->
+     <!-- js -->
+
+<script type="text/javascript" src="../../../public/js/move-top.js"></script>
+<script type="text/javascript" src="../../../public/js/easing.js"></script>
+<script type="text/javascript" src="../../../public/js/jquery.slidey.js"></script>
+<script type="text/javascript" src="../../../public/js/jquery.nivo.slider.js"></script>
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+<script type="text/javascript">
 @include('partials.template2')
 <div class="wrap">
     <div class="content">
